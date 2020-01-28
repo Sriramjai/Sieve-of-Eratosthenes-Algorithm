@@ -1,0 +1,101 @@
+
+body{
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form{
+    width: 50%;
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+}
+
+.form input{
+    width: 100%;
+    height: 100%;
+    color: #595f6e;
+    padding-top: 10px;
+    border: none;
+    outline: none;
+}
+
+.form label {
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+}
+
+.form label::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid #5fa8d3;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+
+.content-name {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: transform 0.3s ease;
+}
+
+.form input:focus + .label-inputLimit .content-name, 
+.form input:valid + .label-inputLimit .content-name {
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #5fa8d3;
+}
+
+.form input:focus + .label-inputLimit::after, 
+.form input:valid + .label-inputLimit::after {
+    transform: translateX(0%);
+}
+
+.submit-button{ 
+    background: rgb(58, 124, 179);
+    color: #fff;
+    /*border: 1px solid #eee; */
+    border-style: outset;
+    border-color: #0066A2;
+    height: 50px;
+    width: 150px;
+    font: bold 15px 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow: none;
+}
+
+.submit-button:hover{
+    background: rgb(138, 200, 219);
+    color: rgb(255, 255, 255);
+    /*border: 1px solid #eee;*/
+    border-radius: 20px;
+    /*box-shadow: 5px 5px 5px #eee;*/
+    text-shadow: none;
+    outline: none;
+}
+
+#error{
+    color: rgb(243, 57, 57);
+    font : bold 15px 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#output{
+    color:rgb(247, 189, 1);
+    font : bold 20px Arial, Helvetica, sans-serif;
+}
+
